@@ -28,5 +28,9 @@ class LoginFragment : Fragment() {
         binding.loginNewAccount.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment)
         )
+
+        binding.loginExistingAccount.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment)
+        )
     }
 }

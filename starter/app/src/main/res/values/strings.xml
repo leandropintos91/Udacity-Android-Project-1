@@ -8,4 +8,8 @@
     <string name="login_with_new_account">Login With New Account</string>
     <string name="the_shoe_store_subtitle">THE SHOE STORE</string>
     <string name="welcome_text">Welcome to the Shoe Store App</string>
+    <string name="instructions_button">Instructions</string>
+    <string name="instructions_text">Instructions text</string>
+    <string name="instructions_subtitle">Instructions</string>
+    <string name="go_to_shoes_list">Go To Shoes List</string>
 </resources>
