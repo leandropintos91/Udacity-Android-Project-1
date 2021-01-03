@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.udacity.shoestore.models.ShoeStoreViewModel"
+            />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +21,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/nameEditText"
-            app:layout_constraintHorizontal_chainStyle="packed"/>
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:labelFor="@+id/nameEditText"/>
 
         <EditText
             android:id="@+id/nameEditText"
@@ -26,8 +33,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:importantForAutofill="yes"
             android:inputType="text"
-            android:autofillHints="Name"
-            tools:ignore="LabelFor" />
+            android:text="@{viewmodel.shoe.name}"
+            android:autofillHints="Name"/>
 
 
         <TextView
@@ -39,7 +46,8 @@
             app:layout_constraintTop_toBottomOf="@id/nameLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/companyEditText"
-            app:layout_constraintHorizontal_chainStyle="packed"/>
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:labelFor="@id/companyEditText"/>
 
         <EditText
             android:id="@+id/companyEditText"
@@ -50,8 +58,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:importantForAutofill="yes"
             android:inputType="text"
-            android:autofillHints="Company"
-            tools:ignore="LabelFor" />
+            android:text="@{viewmodel.shoe.company}"
+            android:autofillHints="Company" />
 
 
 
@@ -64,7 +72,8 @@
             app:layout_constraintTop_toBottomOf="@id/companyLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/sizeEditText"
-            app:layout_constraintHorizontal_chainStyle="packed"/>
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:labelFor="@id/sizeEditText"/>
 
         <EditText
             android:id="@+id/sizeEditText"
@@ -76,7 +85,8 @@
             android:importantForAutofill="yes"
             android:inputType="numberDecimal"
             android:autofillHints="Size"
-            tools:ignore="LabelFor,TextFields" />
+            android:text="@{String.valueOf(viewmodel.shoe.size)}"
+            tools:ignore="TextFields" />
 
 
 
@@ -89,7 +99,8 @@
             app:layout_constraintTop_toBottomOf="@id/sizeLabel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/descriptionEditText"
-            app:layout_constraintHorizontal_chainStyle="packed"/>
+            app:layout_constraintHorizontal_chainStyle="packed"
+            android:labelFor="@id/descriptionEditText"/>
 
         <EditText
             android:id="@+id/descriptionEditText"
@@ -100,8 +111,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:importantForAutofill="yes"
             android:inputType="text"
+            android:text="@{viewmodel.shoe.description}"
             android:autofillHints="Description"
-            tools:ignore="LabelFor,TextFields" />
+            tools:ignore="TextFields" />
 
         <Button
             android:id="@+id/cancel_button"
