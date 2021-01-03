@@ -1,13 +1,20 @@
 package com.udacity.shoestore.models
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ShoeStoreViewModel : ViewModel() {
+    fun addNewShoe(pName: String, pCompany: String, pSize: String, pDescription: String) {
+        shoesList.value!!.add(Shoe(name = pName, company = pCompany, size = pSize.toDouble(), description = pDescription))
+    }
 
-    private val _shoesList : MutableLiveData<List<Shoe>> = MutableLiveData()
+    val shoesList : MutableLiveData<MutableList<Shoe>> = MutableLiveData()
 
-    val shoesList : LiveData<List<Shoe>>
-        get() = _shoesList
+    init {
+        shoesList.value = mutableListOf()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+    }
 }
