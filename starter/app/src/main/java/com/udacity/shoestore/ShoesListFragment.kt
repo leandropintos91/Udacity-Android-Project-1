@@ -38,23 +38,24 @@ class ShoesListFragment : Fragment() {
 
         viewModel.shoesList.observe(viewLifecycleOwner, Observer {
             if (viewModel.shoesList.value!!.size > 0) {
-                val newShoe = viewModel.shoesList.value!![viewModel.shoesList.value!!.size - 1]
-                val cardView = CardView(requireContext())
-                val layoutParams = LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-                )
-                layoutParams.bottomMargin = 8
-                cardView.layoutParams = layoutParams
-                cardView.radius = 12F
-                cardView.setContentPadding(25, 25,25,25)
-                cardView.elevation = 8F
-                cardView.maxCardElevation = 12F
-                val tv = TextView(requireContext())
-                tv.text = newShoe.name + "\n" + newShoe.company + "   " + newShoe.size.toString() + "   " + newShoe.description
+                for ( newShoe in  viewModel.shoesList.value!!) {
+                    val cardView = CardView(requireContext())
+                    val layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    )
+                    layoutParams.bottomMargin = 8
+                    cardView.layoutParams = layoutParams
+                    cardView.radius = 12F
+                    cardView.setContentPadding(25, 25,25,25)
+                    cardView.elevation = 8F
+                    cardView.maxCardElevation = 12F
+                    val tv = TextView(requireContext())
+                    tv.text = newShoe.name + "\n" + newShoe.company + "   " + newShoe.size.toString() + "   " + newShoe.description
 
-                cardView.addView(tv)
-                binding.shoesListLayout.addView(cardView)
+                    cardView.addView(tv)
+                    binding.shoesListLayout.addView(cardView)
+                }
             }
         })
     }
@@ -67,6 +68,7 @@ class ShoesListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         super.onOptionsItemSelected(item)
         if(item.itemId == R.id.logout_item) {
+            viewModel.clearData()
             this.findNavController().navigate(R.id.action_shoesListFragment_to_loginFragment)
         }
         return true

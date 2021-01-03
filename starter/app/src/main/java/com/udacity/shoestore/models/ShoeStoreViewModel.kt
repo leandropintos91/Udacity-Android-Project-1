@@ -8,6 +8,10 @@ class ShoeStoreViewModel : ViewModel() {
         shoesList.value!!.add(Shoe(name = pName, company = pCompany, size = pSize.toDouble(), description = pDescription))
     }
 
+    fun clearData() {
+        shoesList.value!!.clear()
+    }
+
     val shoesList : MutableLiveData<MutableList<Shoe>> = MutableLiveData()
 
     init {
