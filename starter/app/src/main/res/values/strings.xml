@@ -2,8 +2,8 @@
     <string name="app_name">ShoeStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="passwordLabel">Password</string>
-    <string name="emailLabel">E-mail</string>
+    <string name="passwordLabel">Password:</string>
+    <string name="emailLabel">E-mail:</string>
     <string name="login_with_existing_account">Login with Existing Account</string>
     <string name="login_with_new_account">Login With New Account</string>
     <string name="the_shoe_store_subtitle">THE SHOE STORE</string>
@@ -14,4 +14,10 @@
     <string name="go_to_shoes_list">Go To Shoes List</string>
     <string name="add_item">Add Item</string>
     <string name="login_screen_title">Login</string>
+    <string name="nameLabel">Name:</string>
+    <string name="companyLabel">Company:</string>
+    <string name="descriptionLabel">Description:</string>
+    <string name="sizeLabel">Size:</string>
+    <string name="save">Save</string>
+    <string name="cancel">cancel</string>
 </resources>

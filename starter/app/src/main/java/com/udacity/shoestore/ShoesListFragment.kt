@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoesListBinding
 
@@ -19,6 +20,13 @@ class ShoesListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoes_list, container, false)
         setHasOptionsMenu(true)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.goToDetailsButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_shoesListFragment_to_shoeDetailsFragment)
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
