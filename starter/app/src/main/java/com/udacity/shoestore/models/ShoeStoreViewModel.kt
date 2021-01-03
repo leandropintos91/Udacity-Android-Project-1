@@ -13,8 +13,4 @@ class ShoeStoreViewModel : ViewModel() {
     init {
         shoesList.value = mutableListOf()
     }
-
-    override fun onCleared() {
-        super.onCleared()
-    }
 }

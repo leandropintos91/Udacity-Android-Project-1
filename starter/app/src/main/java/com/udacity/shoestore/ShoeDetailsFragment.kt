@@ -16,11 +16,6 @@ class ShoeDetailsFragment : Fragment() {
     lateinit var viewModel: ShoeStoreViewModel
     lateinit var binding : FragmentShoeDetailsBinding
 
-    var name : String = String()
-    var company : String = String()
-    var size : String = String()
-    var description : String = String()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
