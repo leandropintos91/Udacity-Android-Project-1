@@ -13,4 +13,5 @@
     <string name="instructions_subtitle">Instructions</string>
     <string name="go_to_shoes_list">Go To Shoes List</string>
     <string name="add_item">Add Item</string>
+    <string name="login_screen_title">Login</string>
 </resources>
