@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="passwordLabel">Password</string>
     <string name="emailLabel">E-mail</string>
+    <string name="login_with_existing_account">Login with Existing Account</string>
+    <string name="login_with_new_account">Login With New Account</string>
 </resources>
